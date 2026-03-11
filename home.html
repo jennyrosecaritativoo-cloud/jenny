@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Rosales National High School</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Internal styles specific to Home page layout */
+        .featured-badge {
+            background: var(--rnhs-blue);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .campus-img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin-top: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div id="loader-wrapper">
+    <div class="loader"></div>
+    <div class="loader-text">Loading Excellence...</div>
+</div>
+
+<nav>
+    <a href="home.html">Home</a>
+    <a href="about_us.html">About Us</a>
+    <a href="strand.html">Strands</a>
+    <a href="mission_vision.html">Mission & Vision</a>
+    <a href="contact.html">Contact</a>
+    <a href="index.html" class="nav-logout">Log Out</a>
+</nav>
+
+<div class="hero">
+    <h1>Rosales National High School</h1>
+    <p>Quality and Excellence in Education</p>
+    <a href="contact.html" class="btn-enroll">ENROLL NOW</a>
+</div>
+
+<div class="container">
+    <div class="quote-section">
+        <h3 style="color: var(--rnhs-blue); margin-bottom: 10px;">"Education is the most powerful weapon which you can use to change the world."</h3>
+        <p>— Nelson Mandela</p>
+    </div>
+
+    <div style="text-align: center; margin-bottom: 40px;">
+        <span class="featured-badge">Featured Program</span>
+        <h2>Information and Communications Technology (ICT)</h2>
+        <p style="max-width: 700px; margin: auto;">Ready to build the future? Our ICT strand offers hands-on experience in web development, computer programming, and digital arts, ensuring you stay ahead in the digital age.</p>
+    </div>
+
+    <div class="ict-callout">
+        <h2 style="color: var(--rnhs-blue);">Why Choose ICT at RNHS?</h2>
+        <div class="ict-features">
+            <div class="feature-item">
+                <h4 style="color: #A82828;">Web Development</h4>
+                <p style="font-size: 14px;">Learn to code professional websites using HTML, CSS, and JavaScript.</p>
+            </div>
+            <div class="feature-item">
+                <h4 style="color: #A82828;">Computer Systems</h4>
+                <p style="font-size: 14px;">Master the hardware and networking skills needed for modern tech careers.</p>
+            </div>
+            <div class="feature-item">
+                <h4 style="color: #A82828;">Digital Excellence</h4>
+                <p style="font-size: 14px;">Graduate with specialized certifications and lead the industry.</p>
+            </div>
+        </div>
+        <br>
+        <p><strong>Join the ICT community and turn your passion for technology into a career!</strong></p>
+    </div>
+
+    <div style="margin-top: 60px; text-align: center;">
+        <h2>Experience Excellence</h2>
+        <p>Join our community and start your journey toward a successful future.</p>
+        <img src="jh.jpg" alt="RNHS Campus" class="campus-img">
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 Rosales National High School. All Rights Reserved.</p>
+    <p>Site Designed & Developed by: <span class="dev-link" onclick="openProfile()">JennyRose Caritativo</span></p>
+</footer>
+
+<div id="devModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeProfile()">&times;</span>
+        
+        <div class="resume" style="max-width: 100%; background-color: #9FC30D; padding: 25px; border: 2px solid #34F193;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <div style="width: 70%;">
+                    <h2 style="margin-top: 10px; color: #1A1A19;">Personal Information</h2>
+                </div>
+                <div style="width: 30%; text-align: right;">
+                    <img src="je.jpg" alt="Profile Picture" style="width: 130px; height: 130px; object-fit: cover; border: 2px solid #1A1A19;">
+                </div>
+            </div>
+
+            <table>
+                <tr><th>Full name</th><td>JennyRose Caritativo</td></tr>
+                <tr><th>Address</th><td>Carmay East Rosales, Pangasinan</td></tr>
+                <tr><th>Age</th><td>17</td></tr>
+                <tr><th>Email</th><td>jennyrosecaritativo251@gmail.com</td></tr>
+                <tr><th>Phone</th><td>09924815679</td></tr>
+            </table>
+
+            <h2 style="color: #1A1A19;">Education</h2>
+            <table>
+                <tr><th>Level</th><th>School-Year</th></tr>
+                <tr><td>Junior High School</td><td>Rosales National High School (2019–2023)</td></tr>
+                <tr><td>Senior High School</td><td>Rosales National High School (2023–2025)</td></tr>
+            </table>
+
+            <h2 style="color: #1A1A19;">Work Experience</h2>
+            <table>
+                <tr><th>Position</th><th>Description</th></tr>
+                <tr><td>IT Support Assistant</td><td>Photoshop design and school layouts</td></tr>
+                <tr><td>ICT Intern</td><td>Social media assistant and page management</td></tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Page Loader Logic
+    window.addEventListener("load", function() {
+        setTimeout(() => {
+            document.getElementById("loader-wrapper").classList.add("loader-hidden");
+        }, 500);
+    });
+
+    // Modal Logic
+    function openProfile() {
+        document.getElementById("devModal").style.display = "block";
+    }
+
+    function closeProfile() {
+        document.getElementById("devModal").style.display = "none";
+    }
+
+    // Close modal if user clicks outside of the box
+    window.onclick = function(event) {
+        let modal = document.getElementById("devModal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>

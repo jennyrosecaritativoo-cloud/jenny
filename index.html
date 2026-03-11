@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Senior High School Log In</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific styles for the Login Page - Theme Updated to Blue & Gold */
+        body {
+            background: #1f3c88; /* RNHS Blue Background */
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #ffcc00; /* RNHS Gold Header */
+            color: #1f3c88; /* Blue Text for contrast */
+            padding: 15px;
+            text-align: center;
+        }
+
+        .container {
+            width: 350px; 
+            background: white;
+            padding: 25px;
+            margin: 50px auto;
+            border-radius: 8px;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .container h2 {
+            text-align: center;
+            margin-bottom: 5px;
+            color: #1f3c88;
+        }
+
+        .sub-text {
+            text-align: center;
+            color: #606770;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            background-color: #f5f6f7;
+        }
+
+        .extra-fields {
+            display: none; 
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #1f3c88; /* Blue Button */
+            color: #ffcc00; /* Gold Text */
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .login-btn:hover {
+            background-color: #162d66;
+            color: white;
+        }
+
+        p.footer-toggle {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        .toggle-span {
+            color: #1f3c88;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .toggle-span:hover {
+            text-decoration: underline;
+        }
+
+        label {
+            font-size: 12px;
+            color: #606770;
+            display: block;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>RNHS – Senior High School</h1>
+</div>
+
+<div class="container">
+    <h2 id="title">Log In</h2>
+    <div id="sub-title" class="sub-text">Welcome back!</div>
+
+    <div id="form-content">
+        <div id="signup-only" class="extra-fields">
+            <input type="text" placeholder="Full Name" id="fullname">
+            
+            <label>Birthday</label>
+            <input type="date" id="bday">
+            
+            <label>Gender</label>
+            <select id="gender">
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+                <option value="custom">Custom</option>
+            </select>
+        </div>
+
+        <input type="text" placeholder="Email or Mobile Number" id="user" required>
+        <input type="password" placeholder="Password" id="pass" required>
+
+        <button class="login-btn" id="btn" onclick="handleAuth()">Log In</button>
+    </div>
+
+    <p class="footer-toggle" id="toggle">
+        Don't have an account? 
+        <span class="toggle-span" onclick="toggleForm()">Sign Up</span>
+    </p>
+</div>
+
+<footer>
+    <p>&copy; 2026 Rosales National High School. All Rights Reserved.</p>
+    <p>Site Designed & Developed by: <span class="dev-link" onclick="openProfile()" style="color: var(--rnhs-gold); cursor: pointer; text-decoration: underline;">JennyRose Caritativo</span></p>
+</footer>
+
+<div id="devModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeProfile()">&times;</span>
+        <div class="resume" style="max-width: 100%; background-color: #9FC30D; padding: 25px; border: 2px solid #34F193;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <div style="width: 70%;">
+                    <h2 style="margin-top: 10px; color: #1A1A19;">Personal Information</h2>
+                </div>
+                <div style="width: 30%; text-align: right;">
+                    <img src="IMG_20251120_075943.jpg" alt="Profile Picture" style="width: 130px; height: 130px; object-fit: cover; border: 2px solid #1A1A19;">
+                </div>
+            </div>
+            <table>
+                <tr><th>Full name</th><td>JennyRose Caritativo</td></tr>
+                <tr><th>Address</th><td>Carmay East Rosales, Pangasinan</td></tr>
+                <tr><th>Age</th><td>17</td></tr>
+                <tr><th>Email</th><td>jennyrosecaritativo251@gmail.com</td></tr>
+                <tr><th>Phone</th><td>09924815679</td></tr>
+            </table>
+            <h2 style="color: #1A1A19;">Education</h2>
+            <table>
+                <tr><th>Level</th><th>School-Year</th></tr>
+                <tr><td>Junior High School</td><td>Rosales National High School (2019–2023)</td></tr>
+                <tr><td>Senior High School</td><td>Rosales National High School (2023–2025)</td></tr>
+            </table>
+            <h2 style="color: #1A1A19;">Work Experience</h2>
+            <table>
+                <tr><th>Position</th><th>Description</th></tr>
+                <tr><td>IT Support Assistant</td><td>Photoshop design and school layouts</td></tr>
+                <tr><td>ICT Intern</td><td>Social media assistant and page management</td></tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+function handleAuth() {
+    let user = document.getElementById("user").value;
+    let pass = document.getElementById("pass").value;
+
+    if(user === "" || pass === "") {
+        alert("Please fill in all fields");
+    } else {
+        window.location.href = "home.html";
+    }
+}
+
+function toggleForm() {
+    let title = document.getElementById("title");
+    let subTitle = document.getElementById("sub-title");
+    let btn = document.getElementById("btn");
+    let toggle = document.getElementById("toggle");
+    let extraFields = document.getElementById("signup-only");
+
+    if (title.innerText === "Log In") {
+        title.innerText = "Sign Up";
+        subTitle.innerText = "It's quick and easy.";
+        btn.innerText = "Sign Up";
+        extraFields.style.display = "block";
+        toggle.innerHTML = 'Already have an account? <span class="toggle-span" onclick="toggleForm()">Log In</span>';
+    } else {
+        title.innerText = "Log In";
+        subTitle.innerText = "Welcome back!";
+        btn.innerText = "Log In";
+        extraFields.style.display = "none";
+        toggle.innerHTML = 'Don\'t have an account? <span class="toggle-span" onclick="toggleForm()">Sign Up</span>';
+    }
+}
+
+function openProfile() { document.getElementById("devModal").style.display = "block"; }
+function closeProfile() { document.getElementById("devModal").style.display = "none"; }
+window.onclick = function(event) {
+    if (event.target == document.getElementById("devModal")) { closeProfile(); }
+}
+</script>
+
+</body>
+</html>

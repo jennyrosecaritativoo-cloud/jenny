@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | RNHS</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-page {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            padding: 40px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+
+        .form-container { 
+            flex: 1;
+            min-width: 300px;
+            background: white; 
+            padding: 40px; 
+            border-radius: 10px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+            border-top: 5px solid var(--rnhs-gold);
+        }
+
+        .info-box {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .info-box h3 {
+            color: var(--rnhs-blue);
+            margin-top: 0;
+            font-size: 18px;
+        }
+
+        input, textarea { 
+            width: 100%; 
+            padding: 12px; 
+            margin: 10px 0; 
+            border: 1px solid #ddd; 
+            border-radius: 5px; 
+            box-sizing: border-box; 
+            font-family: inherit;
+        }
+
+        button { 
+            width: 100%; 
+            padding: 15px; 
+            background: var(--rnhs-blue); 
+            color: white; 
+            border: none; 
+            font-weight: bold; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            transition: 0.3s;
+        }
+
+        button:hover { 
+            background: #162d66; 
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+<div id="loader-wrapper">
+    <div class="loader"></div>
+    <div class="loader-text">Loading Excellence...</div>
+</div>
+
+<nav>
+    <a href="home.html">Home</a>
+    <a href="about_us.html">About Us</a>
+    <a href="strand.html">Strands</a>
+    <a href="mission_vision.html">Mission & Vision</a>
+    <a href="contact.html">Contact</a>
+    <a href="index.html" class="nav-logout">Log Out</a>
+</nav>
+
+<div class="page-header">
+    <h1>Contact Us</h1>
+    <p>We're here to help you start your journey at RNHS</p>
+</div>
+
+<div class="contact-page">
+    <div class="contact-info">
+        <div class="info-box">
+            <h3>📍 Location</h3>
+            <p>Rosales National High School, Rosales, Pangasinan</p>
+        </div>
+        <div class="info-box">
+            <h3>📞 Phone Number</h3>
+            <p>(075) 123-4567</p>
+        </div>
+        <div class="info-box">
+            <h3>📧 Email Address</h3>
+            <p>admissions@rnhs.edu.ph</p>
+        </div>
+        <div class="info-box">
+            <h3>⏰ Office Hours</h3>
+            <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <h2 style="text-align: center; color: var(--rnhs-blue); margin-bottom: 20px;">Send an Inquiry</h2>
+        <form id="contactForm">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <input type="text" placeholder="Subject" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">SUBMIT INQUIRY</button>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 Rosales National High School. All Rights Reserved.</p>
+    <p>Site Designed & Developed by: <span class="dev-link" onclick="openProfile()" style="color: var(--rnhs-gold); cursor: pointer; text-decoration: underline;">JennyRose Caritativo</span></p>
+</footer>
+
+<div id="devModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeProfile()">&times;</span>
+        
+        <div class="resume" style="max-width: 100%; background-color: #9FC30D; padding: 25px; border: 2px solid #34F193;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <div style="width: 70%;">
+                    <h2 style="margin-top: 10px; color: #1A1A19;">Personal Information</h2>
+                </div>
+                <div style="width: 30%; text-align: right;">
+                    <img src="IMG_20251120_075943.jpg" alt="Profile Picture" style="width: 130px; height: 130px; object-fit: cover; border: 2px solid #1A1A19;">
+                </div>
+            </div>
+
+            <table>
+                <tr><th>Full name</th><td>JennyRose Caritativo</td></tr>
+                <tr><th>Address</th><td>Carmay East Rosales, Pangasinan</td></tr>
+                <tr><th>Age</th><td>17</td></tr>
+                <tr><th>Email</th><td>jennyrosecaritativo251@gmail.com</td></tr>
+                <tr><th>Phone</th><td>09924815679</td></tr>
+            </table>
+
+            <h2 style="color: #1A1A19;">Education</h2>
+            <table>
+                <tr><th>Level</th><th>School-Year</th></tr>
+                <tr><td>Junior High School</td><td>Rosales National High School (2019–2023)</td></tr>
+                <tr><td>Senior High School</td><td>Rosales National High School (2023–2025)</td></tr>
+            </table>
+
+            <h2 style="color: #1A1A19;">Work Experience</h2>
+            <table>
+                <tr><th>Position</th><th>Description</th></tr>
+                <tr><td>IT Support Assistant</td><td>Photoshop design and school layouts</td></tr>
+                <tr><td>ICT Intern</td><td>Social media assistant and page management</td></tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Page Loader Logic
+    window.addEventListener("load", function() {
+        setTimeout(() => {
+            document.getElementById("loader-wrapper").classList.add("loader-hidden");
+        }, 500);
+    });
+
+    // Form Submission Alert
+    document.getElementById('contactForm').onsubmit = function(e) {
+        e.preventDefault();
+        alert('Thank you for your inquiry! We will get back to you soon.');
+        this.reset();
+    };
+
+    // Modal Logic
+    function openProfile() {
+        document.getElementById("devModal").style.display = "block";
+    }
+
+    function closeProfile() {
+        document.getElementById("devModal").style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        let modal = document.getElementById("devModal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
